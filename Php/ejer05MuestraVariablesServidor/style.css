@@ -1,0 +1,16 @@
+table
+{
+    border-collapse: collapse;
+    margin: 25px;
+    border: 2px solid black;
+}
+
+tbody
+{
+    background-color: rgb(139, 93, 224);
+}
+
+td
+{
+    border: 1px solid black;
+}
