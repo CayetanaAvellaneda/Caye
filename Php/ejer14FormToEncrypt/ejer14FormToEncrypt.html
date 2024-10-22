@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la Encriptación</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Resultado de la Encriptación</h1>
+
+    <p id="claveOriginal"></p>
+    <p id="claveMD5"></p>
+    <p id="claveSHA1"></p>
+
+    <script>
+        $(document).ready(function() {
+            // Obtener parámetros de la URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var encriptacion = urlParams.get('encriptacion');
+
+            if (encriptacion) {
+                var datos = JSON.parse(decodeURIComponent(encriptacion));
+
+                // Mostrar los resultados
+                $('#claveOriginal').text('Clave original: ' + datos.clave_original);
+                $('#claveMD5').text('Clave encriptada en MD5: ' + datos.clave_md5);
+                $('#claveSHA1').text('Clave encriptada en SHA1: ' + datos.clave_sha1);
+            }
+        });
+    </script>
+</body>
+</html>
